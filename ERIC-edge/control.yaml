@@ -1,0 +1,46 @@
+#----------  for aggregate feature data
+input_visual_path: Input/fea_selected45678910_nosinglerain/visual_fea/
+input_audio_path: Input/fea_selected45678910_nosinglerain/audio_fea/
+
+#----------  save the combined feature files
+fea_path: Input/fea_boxes/
+
+rain_label: ../process_rain/2021_tamu_west_campus/output/tamu_raindata_rainminute_annotated.json
+
+#---------- for split the feature data
+#fea_fn: fea_all_noMFCCs.csv # fea_day.csv fea_night.csv fea_all.csv
+fea_fn: slidingwindow_fea_all_noMFCCs.csv
+time_suffix: _all #_day _night
+
+#---------- class, reg
+
+fea_suffix: audio-visual # audio-only / visual-only / audio-visual
+# fea_suffix: audio-only
+# fea_suffix: visual-only
+
+#io_path: Output/test_onlyestimator/
+io_path: Output/slidingwindow_5s/
+
+# plot rainfall
+rainfall_plot:
+ - rainfall_2021-06-01.csv
+ - rainfall_2021-06-03.csv
+ - rainfall_2021-06-08.csv
+ - rainfall_2021-06-21.csv
+ - rainfall_2021-06-27.csv
+ - rainfall_2021-06-28.csv
+ - rainfall_2021-07-02.csv
+ - rainfall_2021-07-03.csv
+ - rainfall_2021-07-04.csv
+ - rainfall_2021-07-05.csv
+ - rainfall_2021-07-06.csv
+ - rainfall_2021-07-12.csv
+ - rainfall_2021-08-15.csv
+ - rainfall_2021-08-18.csv
+ - rainfall_2021-09-03.csv
+ - rainfall_2021-09-13.csv
+ # - rainfall_2021-09-14.csv
+ - rainfall_2021-09-18.csv
+ - rainfall_2021-09-28.csv
+ - rainfall_2021-09-29.csv
+ - rainfall_2021-10-01.csv

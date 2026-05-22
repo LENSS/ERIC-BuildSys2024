@@ -1,0 +1,68 @@
+# data folders
+train_dir: ../../tamu_videos/train_rgb/
+val_dir: ../../tamu_videos/val_rgb/
+test_dir: ../../tamu_videos/test_rgb/
+
+# input and output path
+io_path: ../output/FINAL_raindetection_output_newValTst/
+
+# model training parameters
+mode: scratch # finetune transfer
+model: resnet18 # resnet50 vgg16
+
+epoch: 20
+gpu: 0
+save_fq: 10
+num_cpu: 16
+
+# ------------------------ classification task, model eval/testing
+bs: 32 # for rain detection
+lr: 0.00001
+
+eval_model: ../output/output_newValTst/rain_detector_model.best
+eval_fn:
+  - val_pred_res.csv
+  - test_pred_res.csv
+
+#------------------------ for regression task
+regres_bs: 32
+regres_lr: 0.001
+
+# rain intensity labels
+rainfall_label_train: ../labels/new_valtst/rainfall_label_train.csv
+rainfall_label_val: ../labels/new_valtst/rainfall_label_val.csv
+rainfall_label_test: ../labels/new_valtst/rainfall_label_test.csv
+
+eval_regress_model: ../output/output_newValTst_regres-lr0.0001/rain_estimator_model.best
+
+# output regression results filenames
+eval_regress_fn:
+  - regress_val_res.csv
+  - regress_test_res.csv
+
+# ------------------------ for post-processing regression results
+rain_detect_folder: ../output/output_newValTst/
+
+# for plot rainfall
+rainfall_plot:
+ # - rainfall_2021-06-01.csv
+ # - rainfall_2021-06-03.csv
+ # - rainfall_2021-06-08.csv
+ # - rainfall_2021-06-21.csv
+ # - rainfall_2021-06-27.csv
+ # - rainfall_2021-06-28.csv
+ # - rainfall_2021-07-02.csv
+ # - rainfall_2021-07-03.csv
+ # - rainfall_2021-07-04.csv
+ # - rainfall_2021-07-05.csv
+ # - rainfall_2021-07-06.csv
+ # - rainfall_2021-07-12.csv
+ - rainfall_2021-08-15.csv
+ - rainfall_2021-08-18.csv
+ - rainfall_2021-09-03.csv
+ - rainfall_2021-09-13.csv
+ # - rainfall_2021-09-14.csv
+ - rainfall_2021-09-18.csv
+ - rainfall_2021-09-28.csv
+ - rainfall_2021-09-29.csv
+ - rainfall_2021-10-01.csv
